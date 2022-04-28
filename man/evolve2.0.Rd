@@ -2,9 +2,31 @@
 % Please edit documentation in R/AncestRy_functions.R
 \name{evolve2.0}
 \alias{evolve2.0}
+\alias{evolve2.1}
 \title{Evolution of Genetic and Genomic Landscape: \code{\link{evolve2.0}} and \code{\link{evolve2.1}}}
 \usage{
 evolve2.0(
+  x,
+  time,
+  type = c("constant", "dynamic", "additive", "custom"),
+  recombination = c("map", "average"),
+  recom.rate,
+  loci.pos = NULL,
+  chromo_mb = NULL,
+  init.sex = NULL,
+  migration.rate.list = NULL,
+  migration.rate.initial = NULL,
+  mutation.rate = NULL,
+  param.z = NULL,
+  param.w = NULL,
+  fun = c(phenotype = NULL, fitness = NULL),
+  events = NULL,
+  gen.snapshot = NULL,
+  source = NULL,
+  logfile = FALSE
+)
+
+evolve2.1(
   x,
   time,
   type = c("constant", "dynamic", "additive", "custom"),

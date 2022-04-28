@@ -570,6 +570,7 @@ create.source <- function(N, nl, na){
 #' @param  source [list]  A list describing the structure of the source population (see \code{\link{create.source}}). As currently implemented, only the first population of a larger metapopulation can serve as an infinite source of individuals.
 #' @param  logfile [logical] Whether or not a log file recording historical events should be generated.
 #' @seealso  \code{help(evolve)} for additional details on the function arguments.
+#' @rdname evolve2.0
 #' @export
 evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "custom"),
                       recombination = c("map", "average"), recom.rate, loci.pos = NULL,
@@ -804,6 +805,7 @@ evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "cust
   #-------------------------#
   return(res)
 }
+#' @rdname evolve2.0
 #' @export
 evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "custom"),
                        recombination = c("map", "average"), recom.rate, loci.pos = NULL,
@@ -1045,6 +1047,7 @@ evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "cus
 #' @param  n_rep [numeric]  Number of simulations to be performed using \code{evolve2.0} or \code{evolve2.1}.
 #' @param  nb.cores [numeric] Number of cores to use for simulation.
 #' @seealso For details on other arguments see \code{\link{evolve2.0}} or \code{\link{evolve2.1}}.
+#' @rdname iterate_evolve2.0
 #' @export
 iterate_evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "custom"),
                               recombination = c("map", "average"), recom.rate, loci.pos = NULL,
@@ -1069,6 +1072,7 @@ iterate_evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive
   message(paste(" All simulations completed -", Sys.time()))
   return(res)
 }
+#' #' @rdname iterate_evolve2.0
 #' @export
 iterate_evolve2.1 <- function(x, time, type = c("constant", "dynamic", "additive", "custom"),
                               recombination = c("map", "average"), recom.rate, loci.pos = NULL,
