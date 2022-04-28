@@ -1,5 +1,6 @@
 #' @export
 library(progress)
+library(glads)
 library(parallel)
 library(HiddenMarkov)
 library(foreach)
