@@ -14,6 +14,6 @@ Imports:
     doParallel,
     LaplacesDemon
 Remotes:
-    local::./glads_0.1.2.tar.gz
+    git::https://github.com/eriqande/glads.git@master
 RoxygenNote: 7.1.2
 Encoding: UTF-8

@@ -61,7 +61,7 @@ homogeneous.struct <- function(N, nl, n_pop = 1, allele.code = 2){
 }
 
 #' @title Length of Introgressed Sequences
-#' @description  This function computes the length of introgressed sequences within a select population. Length is calculated for each individual and chromosome within individuals separately (but see arguments \code(pool) and \code{stats} for other outputs).
+#' @description  This function computes the length of introgressed sequences within a select population. Length is calculated for each individual and chromosome within individuals separately (but see arguments \code{pool} and \code{stats} for other outputs).
 #'
 #' @param  x file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
 #' @param  pop [numeric] Which simulated population should the length of introgressed sequences be estimated on.
