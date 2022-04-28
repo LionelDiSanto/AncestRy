@@ -1,4 +1,4 @@
-# AncestRy
+# AncestRy R package
 he AncestRy package is a companion to glads (https://github.com/eriqande/glads) for spatially and temporally explicit simulation and analysis of genomic landscapes of introgression.
 
 ## Installation
