@@ -1072,7 +1072,7 @@ iterate_evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive
   message(paste(" All simulations completed -", Sys.time()))
   return(res)
 }
-#' #' @rdname iterate_evolve2.0
+#' @rdname iterate_evolve2.0
 #' @export
 iterate_evolve2.1 <- function(x, time, type = c("constant", "dynamic", "additive", "custom"),
                               recombination = c("map", "average"), recom.rate, loci.pos = NULL,

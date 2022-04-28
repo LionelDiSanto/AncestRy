@@ -2,9 +2,33 @@
 % Please edit documentation in R/AncestRy_functions.R
 \name{iterate_evolve2.0}
 \alias{iterate_evolve2.0}
+\alias{iterate_evolve2.1}
 \title{Wrap up function: Perform Multiple Simulations}
 \usage{
 iterate_evolve2.0(
+  x,
+  time,
+  type = c("constant", "dynamic", "additive", "custom"),
+  recombination = c("map", "average"),
+  recom.rate,
+  loci.pos = NULL,
+  chromo_mb = NULL,
+  init.sex = NULL,
+  migration.rate.list = NULL,
+  migration.rate.initial = NULL,
+  mutation.rate = NULL,
+  param.z = NULL,
+  param.w = NULL,
+  fun = c(phenotype = NULL, fitness = NULL),
+  events = NULL,
+  gen.snapshot = NULL,
+  source = NULL,
+  logfile = FALSE,
+  n_rep = 100,
+  nb.cores = 1
+)
+
+iterate_evolve2.1(
   x,
   time,
   type = c("constant", "dynamic", "additive", "custom"),
