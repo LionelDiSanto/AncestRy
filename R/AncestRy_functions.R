@@ -1,10 +1,17 @@
 #' @import progress
+NULL
 #' @import glads
+NULL
 #' @import parallel
+NULL
 #' @import HiddenMarkov
+NULL
 #' @import foreach
+NULL
 #' @import doParallel
+NULL
 #' @import LaplacesDemon
+NULL
 #'
 #' @title  Create Historical Events
 #' @description  This function generates the \code{events} data frame needed to run \code{\link{evolve2.0}} and \code{\link{evolve2.1}}.
