@@ -1,3 +1,4 @@
+#' @export
 library(progress)
 library(parallel)
 library(HiddenMarkov)
