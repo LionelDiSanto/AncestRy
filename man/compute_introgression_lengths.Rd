@@ -30,5 +30,5 @@ compute_introgression_lengths(
 \item{pool}{[logical] Whether results should be pooled together (one vector with all length across all homologs and individuals).}
 }
 \description{
-This function computes the length of introgressed sequences within a select population. Length is calculated for each individual and chromosome within individuals separately (but see arguments \code(pool) and \code{stats} for other outputs).
+This function computes the length of introgressed sequences within a select population. Length is calculated for each individual and chromosome within individuals separately (but see arguments \code{pool} and \code{stats} for other outputs).
 }
