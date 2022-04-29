@@ -4,16 +4,27 @@
 \alias{compute_introgression_proportions}
 \title{Introgression Proportions}
 \usage{
-compute_introgression_proportions(x, pop, introgressed.allele = 2, loc.pos)
+compute_introgression_proportions(x, pop = 1, introgressed.allele = 2, loc.pos)
 }
 \arguments{
-\item{x}{file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).}
+\item{x}{File output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).}
 
-\item{pop}{[numeric] which simulated population should the summary stats be calculated on.}
+\item{pop}{[numeric] Which simulated population should the summary stats be calculated on.}
 
 \item{introgressed.allele}{[numeric] The symbol representing the introgressed allele.}
 
 \item{loc.pos}{[numeric] A vector describing the position of each marker.}
+}
+\value{
+\code{$Prop.introgression.table}:    A list with locus-specific introgression proportions.
+
+\code{$mean.introgression}:          Chromosome-wide introgression (average across loci).
+
+\code{$range.introgression}:         Range of introgression proportions across loci.
+
+\code{$quantiles.introgression}:     Quantiles of introgression proportions across loci.
+
+\code{$sd.introgression}:            Standard deviation of introgression proportions across loci.
 }
 \description{
 This function computes different summary statistics on simulation outputs (in \code{struct} format).These statistics include locus-specific introgression, average introgression, range of introgression, quantiles of the distribution of introgression and variance in introgression.

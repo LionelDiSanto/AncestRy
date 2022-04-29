@@ -65,6 +65,7 @@ These functions are identical to the \code{evolve} in \code{glads}, except that 
 }
 \note{
 \code{evolve2.0} works with \code{glads 0.1.1}.
+
 \code{evolve2.1} works with \code{glads 0.1.2}.
 }
 \seealso{

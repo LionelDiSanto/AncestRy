@@ -15,7 +15,7 @@ compute_introgression_lengths(
 )
 }
 \arguments{
-\item{x}{file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).}
+\item{x}{File output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).}
 
 \item{pop}{[numeric] Which simulated population should the length of introgressed sequences be estimated on.}
 
@@ -25,7 +25,7 @@ compute_introgression_lengths(
 
 \item{stats}{[character] One of "length" or "nb.loci". Specifying this argument triggers the estimation of pooled individuals mean, median, mode(s), and frequencies of introgressed sequences length (in bp --> "length" or number of loci --> "nb.loci").}
 
-\item{exclude}{[logical] Whether or not introgressed sequences of length = 1bp or 1 locus should be recorded (TURE = no, FALSE = yes).}
+\item{exclude}{[logical] Whether or not introgressed sequences of length = 1bp or 1 locus should be recorded (TRUE = yes, FALSE = no).}
 
 \item{pool}{[logical] Whether results should be pooled together (one vector with all length across all homologs and individuals).}
 }

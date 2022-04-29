@@ -78,12 +78,12 @@ homogeneous.struct <- function(N, nl, n_pop = 1, allele.code = 2){
 #' @title Length of Introgressed Sequences
 #' @description  This function computes the length of introgressed sequences within a select population. Length is calculated for each individual and chromosome within individuals separately (but see arguments \code{pool} and \code{stats} for other outputs).
 #'
-#' @param  x file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
+#' @param  x File output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
 #' @param  pop [numeric] Which simulated population should the length of introgressed sequences be estimated on.
 #' @param  allele [numeric] A vector describing (in order) the integer for the native and introgressed allele.
 #' @param  loc.pos [numeric] A vector describing the position of each marker.
 #' @param  stats [character] One of "length" or "nb.loci". Specifying this argument triggers the estimation of pooled individuals mean, median, mode(s), and frequencies of introgressed sequences length (in bp --> "length" or number of loci --> "nb.loci").
-#' @param  exclude [logical] Whether or not introgressed sequences of length = 1bp or 1 locus should be recorded (TURE = no, FALSE = yes).
+#' @param  exclude [logical] Whether or not introgressed sequences of length = 1bp or 1 locus should be recorded (TRUE = yes, FALSE = no).
 #' @param  pool [logical] Whether results should be pooled together (one vector with all length across all homologs and individuals).
 #' @export
 compute_introgression_lengths <- function(x, pop = 1, allele = c(native = 1, introgressed = 2), loc.pos, stats = NULL, exclude = T, pool = F){
@@ -189,12 +189,17 @@ compute_introgression_lengths <- function(x, pop = 1, allele = c(native = 1, int
 #' @title  Introgression Proportions
 #' @description  This function computes different summary statistics on simulation outputs (in \code{struct} format).These statistics include locus-specific introgression, average introgression, range of introgression, quantiles of the distribution of introgression and variance in introgression.
 #'
-#' @param  x file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
-#' @param  pop [numeric] which simulated population should the summary stats be calculated on.
+#' @param  x File output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
+#' @param  pop [numeric] Which simulated population should the summary stats be calculated on.
 #' @param  introgressed.allele [numeric] The symbol representing the introgressed allele.
 #' @param  loc.pos [numeric] A vector describing the position of each marker.
+#' @return \code{$Prop.introgression.table}:    A list with locus-specific introgression proportions.
+#' @return \code{$mean.introgression}:          Chromosome-wide introgression (average across loci).
+#' @return \code{$range.introgression}:         Range of introgression proportions across loci.
+#' @return \code{$quantiles.introgression}:     Quantiles of introgression proportions across loci.
+#' @return \code{$sd.introgression}:            Standard deviation of introgression proportions across loci.
 #' @export
-compute_introgression_proportions <- function(x, pop, introgressed.allele = 2, loc.pos){
+compute_introgression_proportions <- function(x, pop = 1, introgressed.allele = 2, loc.pos){
 
   #-------------------------------------------------------#
   # Checking input parameters and initial parametrization #
@@ -236,7 +241,7 @@ compute_introgression_proportions <- function(x, pop, introgressed.allele = 2, l
 #' @title Introgression Peaks (Islands or Valleys of Introgression)
 #' @description  This function takes the output of \code{\link{evolve2.0}} or \code{\link{evolve2.1}} and assess peaks of high (island) and low (valley) introgression. Peaks are assessed based on posterior probabilities of states inferred using a hidden markov model and permutation test (3 states: Background, high, low). This function also computes the length of islands and valleys of introgression as well as the distance between them.
 #'
-#' @param  x [list] file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
+#' @param  x [list] File output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).
 #' @param  pop [numeric] Which simulated population should the peaks be calculated on.
 #' @param  introgressed.allele [numeric] The number representing the introgressed allele.
 #' @param  loc.pos [numeric] A vector describing the position of each marker.
@@ -558,11 +563,8 @@ create.source <- function(N, nl, na){
 
 #' @title Evolution of Genetic and Genomic Landscape: \code{\link{evolve2.0}} and \code{\link{evolve2.1}}
 #' @description  These functions are identical to the \code{evolve} in \code{glads}, except that it allows to vary (change) the migration rates over time by defining a data frame describing the desired migration rate at a select generation (equivalent to historical events in fastsimcoal). It also allows select demes to start empty as well as to recurrently use a source population when simulating under the "constant" model for many generations. Finally, these functions allow to retrieve simulated data at user-defined generations to evaluate temporal changes in populations' genetic structure.
-
-#' @note
-#' \code{evolve2.0} works with \code{glads 0.1.1}.
-#' \code{evolve2.1} works with \code{glads 0.1.2}.
-#'
+#' @note \code{evolve2.0} works with \code{glads 0.1.1}.
+#' @note \code{evolve2.1} works with \code{glads 0.1.2}.
 #' @param  migration.rate.list [list] A list of square matrices defining the migration rate between all populations simulated. The index of these matrices (1,2,3,...) is used in the events file (see \code{\link{create.events}}) will you these indices to change the migration rate for desired generations.
 #' @param  migration.rate.initial [numeric] The index of the matrix that wish to be used before the occurrence of the first historical event.
 #' @param  gen.snapshot [numeric] A vector of generations at which you want data to be output.

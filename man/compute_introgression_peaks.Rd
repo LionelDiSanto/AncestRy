@@ -15,7 +15,7 @@ compute_introgression_peaks(
 )
 }
 \arguments{
-\item{x}{[list] file output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).}
+\item{x}{[list] File output from \code{evolve2.0} or \code{evolve2.1} simulations in (\code{struct} format).}
 
 \item{pop}{[numeric] Which simulated population should the peaks be calculated on.}
 
