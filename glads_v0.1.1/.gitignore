@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+src/*.o
+src/*.so
+src/*.dll
+.DS_Store
+junk
+manuscript
+inst/doc
+R-examples/Example0.R
+R-examples/Example2.R

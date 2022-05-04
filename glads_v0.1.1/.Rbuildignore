@@ -1,0 +1,19 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+<<<<<<< HEAD
+^inst$
+^R/macs-interface\.R$
+^R/plink-interface\.R$
+^R-examples$
+^README.Rmd$
+^README_files$
+^\./src/read-macs-output\.cpp$
+^\./src/read-macs-output\.o$
+^\./R/ignored_functions\.R$
+=======
+^junk$
+^manuscript$
+^R-main$
+^README\.md$
+^tempR$
+>>>>>>> e4c5ebe3d282bc585ed35b1bacf8625d85325dd6
