@@ -14,9 +14,7 @@ Imports:
     doParallel,
     LaplacesDemon,
     remotes
-Remotes: 
-    eriqande/glads,
-    Bioconductor/BiocManager
+Remotes: url::https://github.com/LionelDiSanto/AncestRy/blob/master/glads_0.1.2.tar.gz
 LinkingTo: Rcpp
 RoxygenNote: 7.1.2
 Encoding: UTF-8
