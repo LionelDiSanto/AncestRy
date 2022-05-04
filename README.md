@@ -4,7 +4,8 @@ he AncestRy package is a companion to glads (https://github.com/eriqande/glads) 
 ## Installation
 To install the package run the following command in R:
 ```
-devtools::install_github("https://github.com/LionelDiSanto/AncestRy.git", force = TRUE)
+devtools::install_github("https://github.com/eriqande/glads.git", force = TRUE)
+devtools::install_github(c("https://github.com/eriqande/glads.git", "https://github.com/LionelDiSanto/AncestRy.git"), force = TRUE)
 ```
 
 ## Comments on the package
