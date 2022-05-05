@@ -84,7 +84,7 @@ homogeneous.struct <- function(N, nl, n_pop = 1, allele.code = 2){
 #' @param  pop [numeric] Which simulated population should the length of introgressed sequences be estimated on.
 #' @param  allele [numeric] A vector describing (in order) the integer for the native and introgressed allele.
 #' @param  loc.pos [numeric] A vector describing the position of each marker.
-#' @param  stats [character] One of "length" or "nb.loci". Specifying this argument triggers the estimation of pooled individuals mean, median, mode(s), and frequencies of introgressed sequences length (in bp --> "length" or number of loci --> "nb.loci").
+#' @param  stats [character] One of "length" or "nb.loci". Specifying this argument triggers the estimation of intra-individual variance in introgressed sequences length (in bp --> "length" or number of loci --> "nb.loci").
 #' @param  exclude [logical] Whether or not introgressed sequences of length = 1bp or 1 locus should be recorded (TRUE = yes, FALSE = no).
 #' @param  pool [logical] Whether results should be pooled together (one vector with all length across all homologs and individuals).
 #' @export
@@ -95,8 +95,8 @@ compute_introgression_lengths <- function(x, pop = 1, allele = c(native = 1, int
   #-------------------------------------------------------#
   if(missing(x)){stop("A struct data set is missing with no default.")}
   if(missing(loc.pos)){stop("A file recording positions of loci is missing with no default.")}
-  if(is.null(stats) == F){if(stats != "length" & stats != "nb.loci"){stop("stats argument must be either 'length' or 'nb.loci'.")}}
-  if(is.null(stats) == F){output <- "statistics"} else{output <- "details"}
+  if(!is.null(stats)){if(stats != "length" & stats != "nb.loci"){stop("stats argument must be either 'length' or 'nb.loci'.")}}
+  if(!is.null(stats)){output <- "statistics"} else{output <- "details"}
   data <- x[[pop]]
   native <- as.character(allele[1])
   introgressed <- as.character(allele[2])
@@ -168,11 +168,11 @@ compute_introgression_lengths <- function(x, pop = 1, allele = c(native = 1, int
   if(exclude == T){for(r in 1:length(res)){res[[r]] <- res[[r]][which(res[[r]]$length != 1),]}}
   if(exclude == F){for(r in 1:length(res)){res[[r]] <- res[[r]][which(res[[r]]$homolog != 1),]}}
   if(output == "statistics"){
-    pool <- unlist(lapply(1:length(res), function(a){res[[a]] = res[[a]][[grep(stats, colnames(res[[a]]))]]}))
-    res.stat <- list(mean = mean(pool, na.rm = TRUE),
-                     median = median(pool, na.rm = TRUE),
-                     mode = Modes(pool)$modes,
-                     table = data.frame(table(pool)))
+    var <- unlist(lapply(res, function(a){sd(a[,stats])})); names(var) = NULL
+    res.stat <- list(ind.data = var,
+                     mean = mean(var),
+                     SD = sd(var),
+                     range = range(var))
     return(res.stat)
   }
 

@@ -23,7 +23,7 @@ compute_introgression_lengths(
 
 \item{loc.pos}{[numeric] A vector describing the position of each marker.}
 
-\item{stats}{[character] One of "length" or "nb.loci". Specifying this argument triggers the estimation of pooled individuals mean, median, mode(s), and frequencies of introgressed sequences length (in bp --> "length" or number of loci --> "nb.loci").}
+\item{stats}{[character] One of "length" or "nb.loci". Specifying this argument triggers the estimation of intra-individual variance in introgressed sequences length (in bp --> "length" or number of loci --> "nb.loci").}
 
 \item{exclude}{[logical] Whether or not introgressed sequences of length = 1bp or 1 locus should be recorded (TRUE = yes, FALSE = no).}
 
