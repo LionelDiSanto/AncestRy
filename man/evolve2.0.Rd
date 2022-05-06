@@ -56,7 +56,7 @@ evolve2.1(
 
 \item{gen.snapshot}{[numeric] A vector of generations at which you want data to be output.}
 
-\item{source}{[list]  A list describing the structure of the source population (see \code{\link{create.source}}). As currently implemented, only the first population of a larger metapopulation can serve as an infinite source of individuals.}
+\item{source}{[list]  A list describing the structure of the source population generated using \code{\link{create.source}}.}
 
 \item{logfile}{[logical] Whether or not a log file recording historical events should be generated.}
 }

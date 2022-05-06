@@ -570,7 +570,7 @@ create.source <- function(N, nl, pop.index, allele.code){
 #' @param  migration.rate.initial [numeric] The index of the matrix that wish to be used before the occurrence of the first historical event.
 #' @param  gen.snapshot [numeric] A vector of generations at which you want data to be output.
 #' @param  events  The \code{events} data frame generated using \code{create.events function}.
-#' @param  source [list]  A list describing the structure of the source population (see \code{\link{create.source}}). As currently implemented, only the first population of a larger metapopulation can serve as an infinite source of individuals.
+#' @param  source [list]  A list describing the structure of the source population generated using \code{\link{create.source}}.
 #' @param  logfile [logical] Whether or not a log file recording historical events should be generated.
 #' @seealso  \code{help(evolve)} for additional details on the function arguments.
 #' @rdname evolve2.0
