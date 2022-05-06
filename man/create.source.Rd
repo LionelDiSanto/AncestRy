@@ -4,7 +4,7 @@
 \alias{create.source}
 \title{Create a Source Population}
 \usage{
-create.source(N, nl, na)
+create.source(N, nl, na, pop.index)
 }
 \arguments{
 \item{N}{[numeric] Number of individuals in the initial population.}

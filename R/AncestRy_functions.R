@@ -556,8 +556,8 @@ perHMM<-function(x, iter = 9999, island, valley, exclude=T){
 #' @param  nl [numeric] Number of simulated loci.
 #' @param  na [numeric] Number of alleles at each locus.
 #' @export
-create.source <- function(N, nl, na){
-  source.structure <- list(N = N, nl = nl, na = na)
+create.source <- function(N, nl, na, pop.index){
+  source.structure <- list(N = N, nl = nl, na = na, pop.index = pop.index)
   return(source.structure)
 }
 
@@ -722,7 +722,7 @@ evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "cust
       }
       if(is.list(source)){
         s.pop <- initial.struct(source$N, source$nl, source$na)
-        struct[[1]] <- s.pop
+        struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
         if(is.null(gen.snapshot)){res <- struct}
@@ -792,7 +792,7 @@ evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "cust
       }
       if(is.list(source)){
         s.pop <- initial.struct(source$N, source$nl, source$na)
-        struct[[1]] <- s.pop
+        struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
         if(is.null(gen.snapshot)){res <- struct}
@@ -957,7 +957,7 @@ evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "cus
       }
       if(is.list(source)){
         s.pop <- initial.struct(source$N, source$nl, source$na)
-        struct[[1]] <- s.pop
+        struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
         if(is.null(gen.snapshot)){res <- struct}
@@ -1027,7 +1027,7 @@ evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "cus
       }
       if(is.list(source)){
         s.pop <- initial.struct(source$N, source$nl, source$na)
-        struct[[1]] <- s.pop
+        struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
         if(is.null(gen.snapshot)){res <- struct}
