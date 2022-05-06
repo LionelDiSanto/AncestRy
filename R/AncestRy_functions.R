@@ -558,7 +558,7 @@ perHMM<-function(x, iter = 9999, island, valley, exclude=T){
 #' @param  allele.code [numeric] An integer specifying how the allele (fixed within the source population, see \code{\link{homogeneous.struct(}}) should should be encoded.
 #' @export
 create.source <- function(N, nl, pop.index, allele.code){
-  source.structure <- list(N = N, nl = nl, na = na, pop.index = pop.index, allele.code = allele.code)
+  source.structure <- list(N = N, nl = nl, pop.index = pop.index, allele.code = allele.code)
   return(source.structure)
 }
 
