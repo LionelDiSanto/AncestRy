@@ -4,14 +4,16 @@
 \alias{create.source}
 \title{Create a Source Population}
 \usage{
-create.source(N, nl, na, pop.index)
+create.source(N, nl, pop.index, allele.code)
 }
 \arguments{
 \item{N}{[numeric] Number of individuals in the initial population.}
 
 \item{nl}{[numeric] Number of simulated loci.}
 
-\item{na}{[numeric] Number of alleles at each locus.}
+\item{pop.index}{[numeric] An integer giving the index of the population that wishes to be used as source in the initial \code{struct} object (obtained using \code{initial.struc()} or \code{\link{homogeneous.struct()}})}
+
+\item{allele.code}{[numeric] An integer specifying how the allele (fixed within the source population, see \code{\link{homogeneous.struct(}}) should should be encoded.}
 }
 \description{
 This function allows you to create a \code{source} population for genetic simulation using \code{\link{evolve2.0}} or \code{\link{evolve2.1}}. Specifically, using the argument \code{source}, one can define a population serving indefinitely as a source of individuals. This function generates the value that needs to be fed to the \code{source} argument in \code{evolve2.0} or \code{evolve2.1} if such a demographic scenario wishes to be simulated.

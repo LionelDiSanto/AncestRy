@@ -554,10 +554,11 @@ perHMM<-function(x, iter = 9999, island, valley, exclude=T){
 #'
 #' @param  N [numeric] Number of individuals in the initial population.
 #' @param  nl [numeric] Number of simulated loci.
-#' @param  na [numeric] Number of alleles at each locus.
+#' @param  pop.index [numeric] An integer giving the index of the population that wishes to be used as source in the initial \code{struct} object (obtained using \code{initial.struc()} or \code{\link{homogeneous.struct()}})
+#' @param  allele.code [numeric] An integer specifying how the allele (fixed within the source population, see \code{\link{homogeneous.struct(}}) should should be encoded.
 #' @export
-create.source <- function(N, nl, na, pop.index){
-  source.structure <- list(N = N, nl = nl, na = na, pop.index = pop.index)
+create.source <- function(N, nl, pop.index, allele.code){
+  source.structure <- list(N = N, nl = nl, na = na, pop.index = pop.index, allele.code = allele.code)
   return(source.structure)
 }
 
@@ -596,7 +597,6 @@ evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "cust
   if (is.null(events)) stop("If no historical events wish to be simulated, please use the function evolve.")
   if (is.null(migration.rate.list)) stop("A list of migration matrices must be provided.")
   if (is.null(migration.rate.initial)) stop("An initial migration rate index must be provided.")
-  if (is.list(source)){message("'Source' argument specified. Remember that the source population MUST be the first population of the metapopulation structure specified with the argument 'x'.")}
   if (is.list(x) == F)
     stop("Initial populations should be a list of arrays.",
          call. = F)
@@ -721,7 +721,7 @@ evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "cust
         }
       }
       if(is.list(source)){
-        s.pop <- initial.struct(source$N, source$nl, source$na)
+        s.pop <- homogeneous.struct(N = source$N, nl = source$nl, n_pop = 1, allele.code = source$allele.code)
         struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
@@ -791,7 +791,7 @@ evolve2.0 <- function(x, time, type = c("constant", "dynamic", "additive", "cust
         }
       }
       if(is.list(source)){
-        s.pop <- initial.struct(source$N, source$nl, source$na)
+        s.pop <- homogeneous.struct(N = source$N, nl = source$nl, n_pop = 1, allele.code = source$allele.code)
         struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
@@ -831,7 +831,6 @@ evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "cus
   if (is.null(events)) stop("If no historical events wish to be simulated, please use the function evolve.")
   if (is.null(migration.rate.list)) stop("A list of migration matrices must be provided.")
   if (is.null(migration.rate.initial)) stop("An initial migration rate index must be provided.")
-  if (is.list(source)){message("'Source' argument specified. Remember that the source population MUST be the first population of the metapopulation structure specified with the argument 'x'.")}
   if (is.list(x) == F)
     stop("Initial populations should be a list of arrays.",
          call. = F)
@@ -956,7 +955,7 @@ evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "cus
         }
       }
       if(is.list(source)){
-        s.pop <- initial.struct(source$N, source$nl, source$na)
+        s.pop <- homogeneous.struct(N = source$N, nl = source$nl, n_pop = 1, allele.code = source$allele.code)
         struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
@@ -1026,7 +1025,7 @@ evolve2.1 <- function (x, time, type = c("constant", "dynamic", "additive", "cus
         }
       }
       if(is.list(source)){
-        s.pop <- initial.struct(source$N, source$nl, source$na)
+        s.pop <- homogeneous.struct(N = source$N, nl = source$nl, n_pop = 1, allele.code = source$allele.code)
         struct[[source$pop.index]] <- s.pop
       }
       if (i%%time == 0){
