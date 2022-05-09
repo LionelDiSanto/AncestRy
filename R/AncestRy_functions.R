@@ -168,9 +168,9 @@ compute_introgression_lengths <- function(x, pop = 1, allele = c(native = 1, int
   if(output == "statistics"){
     var <- unlist(lapply(res, function(a){sd(a[,stats])})); names(var) = NULL
     res.stat <- list(ind.data = var,
-                     mean = mean(var),
-                     SD = sd(var),
-                     range = range(var))
+                     mean = mean(var, na.rm = T),
+                     SD = sd(var, na.rm = T),
+                     range = range(var, na.rm = T))
     return(res.stat)
   }
 
