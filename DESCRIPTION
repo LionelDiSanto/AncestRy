@@ -1,6 +1,6 @@
 Package: AncestRy
 Title: Simulation and Analysis of Genomic Landscape of Introgression
-Version: 0.0.1
+Version: 0.1.0
 Author: Lionel Nicolas Di Santo
 Maintainer: Lionel Nicolas Di Santo <lionel.disanto@unige.ch>
 Description: The AncestRy package is a companion to glads (https://github.com/eriqande/glads) for spatially and temporally explicit simulation and analysis of genomic landscapes of introgression.
@@ -14,5 +14,5 @@ Imports:
     doParallel,
     LaplacesDemon,
 LinkingTo: Rcpp
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Encoding: UTF-8
